@@ -1,3 +1,24 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+app_homepage:
+    path: /
+    controller: App\Controller\PagesController::home
+
+app_simulator:
+    path: /simulateur
+    controller: App\Controller\SimulatorController::index
+
+app_request:
+    path: /demande-de-prêt
+    controller: App\Controller\PagesController::request
+
+app_about:
+    path: /a-propos
+    controller: App\Controller\PagesController::about
+
+app_contact:
+    path: /contact
+    controller: App\Controller\PagesController::contact
+
+show_credit:
+    path:     /ajax_request
+    controller: App\Controller\SimulatorController::showMensualites
+    methods: POST

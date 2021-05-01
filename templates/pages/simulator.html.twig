@@ -1,0 +1,23 @@
+{# templates/pages/simulator.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{%
+    set dataHeader = {
+        'image' : '/img/finance1.jpg',
+        'title' : 'header title',
+        'subtitle' : 'header subtitle',
+        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        'button'  : 'header button text',
+    }
+%}
+
+{% block title 'Simulateur' %}
+
+{% block body %}
+    
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_right' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_simulator' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-black', 'classe' : 'footer', 'color' : 'white' } %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<div {% if classe is defined %} class="{{ classe }}" {% endif %}">
+
+    <!-- Promo Section - "We know design" -->
+    <div id="text_image" class="w3-container">
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                {% if dataTextImage.title is defined %}
+                    <h3>{{ dataTextImage.title }}</h3>
+                {% endif %}
+
+                {% if dataTextImage.text is defined %}
+                    <p>{{ dataTextImage.text }}</p>
+                {% endif %}
+                
+                {% if dataTextImage.button is defined %}
+                        {% include 'partials/_black_button.html.twig' with { 'button' : dataTextImage.button }  %}
+                {% endif %}
+
+            </div>
+            <div class="w3-col m6">
+                {% if dataTextImage.image is defined %}
+                    <div class="w3-image w3-round-large image" style="background-image: url({{ dataTextImage.image }})" alt="Buildings"></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>

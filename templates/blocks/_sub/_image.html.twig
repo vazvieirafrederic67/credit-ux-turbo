@@ -1,0 +1,19 @@
+<div {% if classe is defined %} id="{{ classe }}" {% endif %}>
+
+    <!-- Background photo -->
+    <div style="background-image: url( {{ dataImage.image }} )" class="w3-display-container">
+        <div {% if color is defined %} style="color:{{ color }}" {% endif %} class="w3-center">
+
+            {% if dataImage.title is defined %} 
+                <h1 class="w3-jumbo">{{ dataImage.title }}</h1>
+            {% endif %}
+
+            {% if dataImage.text is defined %} 
+                <h2>{{ dataImage.text }}</h2>
+            {% endif %}
+            
+          
+        </div>
+    </div>
+
+</div>

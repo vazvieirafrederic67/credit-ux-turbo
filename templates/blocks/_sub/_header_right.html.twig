@@ -1,0 +1,21 @@
+<!-- Header -->
+<header class="w3-display-container w3-wide" id="home">
+    <div class="image" style="background-image:url({{ dataHeader.image }}) ">
+        <div class="content-right-outer">
+            <div class="content-right-inner">
+                 {% if dataHeader.title is defined %}
+                    <div class="title {% if dataHeader.title is defined %} {{ color }} {% endif %}"><h1>{{ dataHeader.title }}</h1></div>
+                {% endif %}
+                {% if dataHeader.subtitle is defined %}
+                    <div class="subtitle {% if dataHeader.title is defined %} {{ color }} {% endif %}"><h2>{{ dataHeader.subtitle }}</h2></div>
+                {% endif %}
+                {% if dataHeader.text is defined %}
+                    <div class="text {% if dataHeader.title is defined %} {{ color }} {% endif %}"><p>{{ dataHeader.text }}</p></div>
+                {% endif %}
+                {% if dataHeader.button is defined %}
+                    {% include 'partials/_button.html.twig' with { 'button' : dataHeader.button }  %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>

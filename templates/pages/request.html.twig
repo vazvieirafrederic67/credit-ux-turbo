@@ -1,0 +1,19 @@
+{# templates/pages/request.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{%
+    set dataHeader = {
+        'image' : '/img/famille.jpeg',
+        'title' : 'header title',
+        'subtitle' : 'header subtitle',
+        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        'button'  : 'header button text',
+    }
+%}
+
+{% block title 'Request' %}
+
+{% block body %}    
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_left' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
+{% endblock %}

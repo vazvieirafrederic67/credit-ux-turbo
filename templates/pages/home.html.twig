@@ -1,0 +1,71 @@
+{# templates/pages/home.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{%
+    set dataHeader = {
+        'image' : '/img/finance2.jpg',
+        'title' : 'header title',
+        'subtitle' : 'header subtitle',
+        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        'button'  : 'header button text',
+    }
+%}
+
+{%
+    set dataTextImage = {
+        'image' : '/img/famille2.jpeg',
+        'title' : 'Text Image title',
+        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry, lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        'button'  : 'header button text',
+    }
+%}
+
+{%
+    set dataImageText = {
+        'image' : '/img/finance6.jpeg',
+        'title' : 'Image text title',
+        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry, lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        'button'  : 'header button text',
+    }
+%}
+
+{%
+    set dataCards = {
+        1 : {
+            'image' : '/img/finance4.jpeg',
+            'title' : 'blablatitle1',
+            'text' : 'blablatext1',
+        },
+        2 : {
+            'image' : '/img/finance5.jpeg',
+            'title' : 'blablatitle2',
+            'text' : 'blablatext2',
+        },
+        3 : {
+            'image' : '/img/economiser.jpeg',
+            'title' : 'blablatitle3',
+            'text' : 'blablatext3',
+        },
+    }
+%}
+
+
+{%
+    set dataImage = {
+        'image' : '/img/team.jpeg',
+    }
+%}
+
+{% block title 'Accueil' %}
+
+{% block body %}
+
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_left' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_text_image' , 'bg': 'bg-white', 'classe' : 'text_image', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_image_text' , 'bg': 'bg-white', 'classe' : 'image_text', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_image' , 'bg': 'bg-lightgrey', 'classe' : 'background-image', 'color' : 'white' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_cards' , 'bg': 'bg-white', 'classe' : 'container-cards', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-black', 'classe' : 'footer', 'color' : 'white' } %}
+
+{% endblock %}

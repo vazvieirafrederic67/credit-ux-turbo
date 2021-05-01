@@ -1,0 +1,224 @@
+<turbo-frame id="simulator">
+     
+     <div class="selection">
+          <h3>Choisissez votre crédit:</h3>
+          
+          <select name="credits" id="credit-select">
+               
+               {% for credit in credits %}
+                
+                    {% if credit.actif == 'Yes' %}
+                         <option data-max={{ credit.getMontantMax }} data-min={{ credit.getMontantMin }} data-taux="{{ credit.taux }}" value="{{ credit.id }}">{{ credit.designation }}</option>
+                    {% endif %}
+               {% endfor %}
+          </select>
+     
+     </div>
+
+     <div class="select_amount">
+          <div>
+               <h3>Choisissez votre montant :</h3>
+          </div>
+
+          <div class="slidecontainer">
+               <div>
+                    <p>Value: <span id="info-slider"></span></p>
+               </div>
+               <div>
+                    <input type="range" min="5000" max="100000" class="slider" id="range">
+               </div>
+               <div>
+                    <div id="info-range-min"></div> 
+                    <div id="info-range-max"></div>
+               </div>
+          </div>
+     </div>
+
+     <div class="credit_term">
+          <div>
+               <h3>Choisissez votre duree :</h3>
+          </div>
+
+          <div id="credit-form-content"></div>
+     
+     </div>
+
+     <div class="credit_resum">
+          <div>
+               <p>Montant : <span id="amount_resum"></span> €</p>
+               <p>Montant total : <span id="total_amount_resum"></span> €</p>
+               <p>Durée : <span id="duration_resum"></span> mois</p>
+               <p>TAEG : <span id="taeg_resum"></span> %</p>
+               <p>Taux débiteur : <span id="taux_resum"></span> %</p>
+          </div>
+     </div>
+
+
+<script data-turbo-eval = "true" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script data-turbo-eval = "true" type="module">
+
+
+$( document ).ready(function() {
+
+     var  slider         = document.getElementById("range"),
+     typeCredit          = $('#credit-select').find(':selected').attr('value'),
+     output              = document.getElementById("info-slider"),
+     outputMin           = document.getElementById("info-range-min"),
+     outputMax           = document.getElementById("info-range-max"),
+     creditFormContent   = document.getElementById("credit-form-content"),
+     interest            = $('#credit-select').find(':selected').attr('data-taux'),
+     newDurees           = [];
+     output.innerHTML    = $('#credit-select').find(':selected').attr('data-min');
+     outputMin.innerHTML = $('#credit-select').find(':selected').attr('data-min');
+     outputMax.innerHTML = $('#credit-select').find(':selected').attr('data-max');
+     
+     
+     $(slider).attr({
+       "max" : outputMax.innerHTML,        // substitute your own
+       "min" : outputMin.innerHTML,
+       "value" : outputMin.innerHTML          // values (or variables) here
+     });
+
+     slider.oninput = function() {
+          output.innerHTML = this.value;
+     }
+
+     var principal = $('#range').val();
+     $('#amount_resum').text(principal);
+
+     var durees = [];
+
+     {% for mensualite in mensualites %}
+          durees.push( {{ mensualite.mensualite }} )
+     {% endfor %}
+
+     showDurees(durees, principal, typeCredit);
+     
+
+     $('#taeg_resum').text( interest * 100 );
+     $('#taux_resum').text( interest * 100 );
+     
+     $("#credit-select").change(function(){
+          var id = $(this).val(),
+          typeCredit = $('#credit-select').find(':selected').attr('value'),
+          that = $(this);
+
+          $.ajax({
+               url:'{{ (path('show_credit')) }}',
+               type: "POST",
+               dataType: "json",
+               data: {
+                    "some_var_name": id
+               },
+               async: true,
+               success: function (data)
+               {
+                    slider.min          = data.montant_min;
+                    slider.max          = data.montant_max;
+                    slider.value        = data.montant_min;
+                    output.innerHTML    = slider.value;
+                    outputMin.innerHTML = data.montant_min;
+                    outputMax.innerHTML = data.montant_max;
+                    interest            = data.taux;
+                    principal           = $('#range').val();
+                    $('#amount_resum').text(principal);
+                    showDurees(data.durees, principal, typeCredit);
+                    $('#taeg_resum').text( financial(data.taux * 100) );
+                    $('#taux_resum').text( financial(data.taux * 100) );
+                    cardClick(typeCredit, principal);
+               }
+          });
+
+          return false;
+     });
+
+     function showDurees(durees, principal, typeCredit){
+          newDurees = [];
+          $("div.card").remove();
+          
+          durees.forEach(function(element){
+               newDurees.push(element);
+               var paye_mensuel = trouve_paiement(principal, interest / 12, element)
+               var childAmount = document.createElement("div");
+               var childTime = document.createElement("div");
+               var child = document.createElement("div");
+               child.className = "card";
+               childTime.className = "time";
+               childAmount.className = "amount"; 
+               childAmount.innerHTML = financial(paye_mensuel) + ' €';
+               childTime.innerHTML = element + ' mois';
+               child.appendChild(childAmount);
+               child.appendChild(childTime);
+               creditFormContent.appendChild(child);
+               $('#duration_resum').text(element);
+               $('#total_amount_resum').text( financial(element * paye_mensuel) );
+          });
+          cardClick(typeCredit, principal);
+     }
+
+     $('#range').change(function(){
+          var id = $("#credit-select").val(),
+          typeCredit = $('#credit-select').find(':selected').attr('value');
+          principal =  $(this).val();
+          $('#amount_resum').text(principal);
+          
+          $("div.card").remove();
+          
+          newDurees.forEach(function(element){
+               var paye_mensuel = trouve_paiement(principal, interest / 12, element)
+               var childAmount = document.createElement("div");
+               var childTime = document.createElement("div");
+               var child = document.createElement("div");
+               child.className = "card";
+               childTime.className = "time";
+               childAmount.className = "amount"; 
+               childAmount.innerHTML = financial(paye_mensuel) + ' €';
+               childTime.innerHTML = element + ' mois';
+               child.appendChild(childAmount);
+               child.appendChild(childTime);
+               creditFormContent.appendChild(child);
+               $('#total_amount_resum').text( financial(element * paye_mensuel) );
+          });
+          cardClick(typeCredit, principal);
+     });
+
+     function trouve_paiement(PR, IN, PE) {
+          var PAY = (PR * IN) / (1 - Math.pow(1 + IN, -PE))
+          return PAY
+     }
+
+     function financial(x) {
+          return Number.parseFloat(x).toFixed(2);
+     }
+
+     function cardClick(typeCredit, principal){       
+
+          $('.card').click(function(){
+               var  amount_selected = $(this).children('div.amount').text(),
+                    time_selected = $(this).children('div.time').text()
+               ;
+
+               $('#total_amount_resum').text(parseInt(amount_selected) * parseInt(time_selected));
+               $('#duration_resum').text(parseInt(time_selected));
+
+               /*Remplir les champs cachés*/
+               $('#demande_credit_dureeDuPret').val(parseInt(time_selected));
+               $('#demande_credit_typeDeCredit').val(parseInt(typeCredit));
+               $('#demande_credit_montantAEmprunter').val(parseInt(principal));
+          })
+     }
+
+     
+     
+     var  amount_selected = $('.card').last().children('div.amount').text(),
+          time_selected = $('.card').last().children('div.time').text()
+     ;
+
+     /*Remplir les champs cachés*/
+     $('#demande_credit_dureeDuPret').val(parseInt(time_selected));
+     $('#demande_credit_typeDeCredit').val(parseInt(typeCredit));
+     $('#demande_credit_montantAEmprunter').val(parseInt(principal));
+});
+
+</script>
+</turbo-frame>

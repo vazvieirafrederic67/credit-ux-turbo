@@ -1,0 +1,15 @@
+@import '_common.css';
+@import '_colors.css';
+@import '_header.css';
+@import '_contact_form.css';
+@import '_map.css';
+@import '_text_image.css';
+@import '_image_text.css';
+@import '_footer.css';
+@import '_cards.css';
+@import '_image.css';
+@import '_simulator.css';
+
+body {
+    background-color: lightgray;
+}

@@ -1,0 +1,32 @@
+{# templates/pages/contact.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{%
+    set dataHeader = {
+        'image' : '/img/finance2.jpg',
+        'title' : 'header title',
+        'subtitle' : 'header subtitle',
+        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        'button'  : 'header button text',
+    }
+%}
+
+{%
+ set dataContact = {
+        'title' : "Contact",
+        'text'  : "Test Lets get in touch and talk about your next project.",
+        'button'  : 'Send form contact',
+    }
+%}
+
+{% block title 'Contact' %}
+
+{% block body %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_left' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_contact_form' , 'bg': 'bg-lightgrey', 'classe' : 'contact-form', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_map' , 'bg': 'bg-lightgrey', 'classe' : 'map', 'color' : 'black' } %}
+
+
+
+{% endblock %}

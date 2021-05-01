@@ -1,0 +1,28 @@
+.background-image {
+    height: 500px;
+    width: 100%;
+}
+
+
+.background-image > #background-image {
+    height: 100%;
+    width: 100%;
+}
+
+.background-image > #background-image > div {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.background-image > #background-image > div > div {
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+.background-image > #background-image > div > div > h1 {
+    margin:0;
+}
+
