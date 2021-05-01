@@ -42,6 +42,7 @@
 }
 
 @media screen and (max-width: 800px) {
+
     .image_text> #image_text {
         margin: 0;
         padding: 0;
@@ -51,5 +52,6 @@
         height: auto;
         padding-top: 20px;
         padding-bottom: 20px;
+        width: 100%;
     }
 }
