@@ -44,18 +44,18 @@
     set dataCards = {
         1 : {
             'image' : '/img/finance4.jpeg',
-            'title' : 'blablatitle1',
-            'text' : 'blablatext1',
+            'title' : 'blablatitle1card',
+            'text' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem.",
         },
         2 : {
             'image' : '/img/finance5.jpeg',
             'title' : 'blablatitle2',
-            'text' : 'blablatext2',
+            'text' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         },
         3 : {
             'image' : '/img/economiser.jpeg',
             'title' : 'blablatitle3',
-            'text' : 'blablatext3',
+            'text' : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.",
         },
     }
 %}
@@ -71,11 +71,11 @@
 
 {% block body %}
 
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_carousel' , 'bg': 'bg-white', 'classe' : 'carousel', 'color' : 'white' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_carousel' , 'bg': 'bg-white', 'classe' : 'carousel', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_text_image' , 'bg': 'bg-white', 'classe' : 'text_image', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_image_text' , 'bg': 'bg-white', 'classe' : 'image_text', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_image' , 'bg': 'bg-lightgrey', 'classe' : 'background-image', 'color' : 'white' } %}
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_cards' , 'bg': 'bg-white', 'classe' : 'container-cards', 'color' : 'black' } %}
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-black', 'classe' : 'footer', 'color' : 'white' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_cards' , 'bg': 'bg-lightgrey', 'classe' : 'container-fluid', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'white' } %}
 
 {% endblock %}

@@ -1,9 +1,9 @@
-<div {% if classe is defined %} class="{{ classe }}" {% endif %}">
+<div {% if classe is defined %} class="{{ classe }}" {% endif %}>
 
     <!-- Promo Section - "We know design" -->
-    <div id="text_image" class="w3-container">
-        <div class="w3-row-padding">
-            <div class="w3-col m6">
+    <div id="text_image" class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
                 {% if dataTextImage.title is defined %}
                     <h3>{{ dataTextImage.title }}</h3>
                 {% endif %}
@@ -13,13 +13,13 @@
                 {% endif %}
                 
                 {% if dataTextImage.button is defined %}
-                        {% include 'partials/_black_button.html.twig' with { 'button' : dataTextImage.button }  %}
+                        {% include 'partials/_button.html.twig' with { 'button' : dataTextImage.button }  %}
                 {% endif %}
 
             </div>
-            <div class="w3-col m6">
+            <div class="col-md-12 col-lg-6">
                 {% if dataTextImage.image is defined %}
-                    <div class="w3-image w3-round-large image" style="background-image: url({{ dataTextImage.image }})" alt="Buildings"></div>
+                    <div class="image" style="background-image: url({{ dataTextImage.image }})" alt="Buildings"></div>
                 {% endif %}
             </div>
         </div>

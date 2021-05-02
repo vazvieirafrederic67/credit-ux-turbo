@@ -1,16 +1,16 @@
 <div {% if classe is defined %} class={{ classe }} {% endif %}>
 
     <!-- Promo Section - "We know design" -->
-    <div id="image_text" class="w3-container">
-        <div class="w3-row-padding">
+    <div id="image_text" class="container">
+        <div class="row">
             
-            <div class="w3-col m6">
+            <div class="col-md-12 col-lg-6">
                 {% if dataImageText.image is defined %}
                     <div class="w3-image w3-round-large image" style="background-image: url({{ dataImageText.image }})" alt="Buildings"></div>
                 {% endif %}
             </div>
 
-            <div class="w3-col m6">
+            <div class="col-md-12 col-lg-6">
                 {% if dataImageText.title is defined %}
                     <h3>{{ dataImageText.title }}</h3>
                 {% endif %}
@@ -20,11 +20,12 @@
                 {% endif %}
                 
                 {% if dataImageText.button is defined %}
-                        {% include 'partials/_black_button.html.twig' with { 'button' : dataImageText.button }  %}
+                        {% include 'partials/_button.html.twig' with { 'button' : dataImageText.button }  %}
                 {% endif %}
 
             </div>
         </div>
+        
     </div>
 
 </div>

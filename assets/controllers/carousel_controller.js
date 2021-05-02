@@ -13,18 +13,29 @@ import { Controller } from 'stimulus';
  * Delete this file or adapt it for your use!
  */
 export default class extends Controller {
+    
 
     connect(){
-        this.myParentFunction()
+        var bootstrap = require('bootstrap');
+        this.myParentFunction(bootstrap)
     }  
 
-    myParentFunction(){
-        var bootstrap = require('bootstrap');
+    myParentFunction(bootstrap){
         
-        var myCarousel = document.querySelector('#carouselExampleSlidesOnly')
+        
+        
+        var myCarousel = document.querySelector('#carousel')
         var carousel = new bootstrap.Carousel(myCarousel, {
-            interval: 3000,
+            interval: 5000,
             wrap: true,
+            pause: false,
+            touch: true,
+            keyboard: false,
+            ride: false,
+            slide: true,
+            cycle: true
         })
+
+        console.log(carousel);
     }
   }

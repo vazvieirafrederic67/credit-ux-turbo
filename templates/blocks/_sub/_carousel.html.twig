@@ -1,13 +1,46 @@
-<div data-controller="carousel" id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<div data-controller="carousel" id="carousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div style="background-image:url({{ dataCarousel.1.image }})" class="d-block w-100"></div>
+      <div style="background-image:url({{ dataCarousel.1.image }})" class="d-block w-100">
+        <div class="carousel-content-outer">
+          <div class="carousel-content-inner">
+            {% if dataCarousel.1.title is defined %}
+              <h1 class="title {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.1.title }}</h1>
+            {% endif %}
+            {% if dataCarousel.1.text is defined %}
+              <p class="text {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.1.text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </div>
     <div class="carousel-item">
-      <div style="background-image:url({{ dataCarousel.2.image }})" class="d-block w-100"></div>
+      <div style="background-image:url({{ dataCarousel.2.image }})" class="d-block w-100">
+        <div class="carousel-content-outer">
+          <div class="carousel-content-inner">
+            {% if dataCarousel.2.title is defined %}
+              <h1 class="title {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.2.title }}</h1>
+            {% endif %}
+            {% if dataCarousel.2.text is defined %}
+              <p class="text {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.2.text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </div>
     <div class="carousel-item">
-      <div style="background-image:url({{ dataCarousel.3.image }})" class="d-block w-100"></div>
+      <div style="background-image:url({{ dataCarousel.3.image }})" class="d-block w-100">
+       <div class="carousel-content-outer">
+          <div class="carousel-content-inner">
+            {% if dataCarousel.3.title is defined %}
+              <h1 class="title {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.3.title }}</h1>
+            {% endif %}
+            {% if dataCarousel.3.text is defined %}
+              <p class="text {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.3.text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
