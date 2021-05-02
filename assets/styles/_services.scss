@@ -1,0 +1,92 @@
+/* Services */
+
+.services {
+	height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.service-item img {
+	width: 100%;
+	overflow: hidden;
+}
+
+.service-item .down-content {
+	background-color: #f7f7f7;
+	padding: 30px;
+}
+
+.service-item .down-content h4 {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.25px;
+	margin-bottom: 15px;
+}
+
+.service-item .down-content p {
+	margin-bottom: 20px;
+}
+
+.section-heading em {
+	font-style: normal;
+	color: #2196F3;
+}
+
+.section-heading h2 {
+	font-size: 36px;
+	font-weight: 600;
+	color: #1e1e1e;
+}
+
+.section-heading em {
+	font-style: normal;
+	color: #2196F3;
+}
+
+.section-heading span {
+	display: block;
+	margin-top: 15px;
+	text-transform: uppercase;
+	font-size: 15px;
+	color: #666;
+	letter-spacing: 1px;
+}
+
+a.filled-button {
+	background-color: #2196F3;
+	color: #fff;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 12px 30px;
+	border-radius: 30px;
+	display: inline-block;
+	transition: all 0.3s;
+}
+
+a.filled-button:hover {
+	background-color: #fff;
+	color: #2196F3;
+}
+
+a {
+	text-decoration: none!important;
+}
+
+.section-heading {
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.services > .container > .row > div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.services > .container > .row > .col-md-4{
+    height: 400px;
+}
+
+.services > .container > .row > .col-md-4 > .service-item > .down-content{
+    height: 200px;
+}

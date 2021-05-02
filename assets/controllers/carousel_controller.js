@@ -1,8 +1,6 @@
 import { Controller } from 'stimulus';
 
 
-
-
 /*
  * This is an example Stimulus controller!
  *
@@ -14,7 +12,6 @@ import { Controller } from 'stimulus';
  */
 export default class extends Controller {
     
-
     connect(){
         var bootstrap = require('bootstrap');
         this.myParentFunction(bootstrap)
@@ -36,6 +33,5 @@ export default class extends Controller {
             cycle: true
         })
 
-        console.log(carousel);
     }
   }
