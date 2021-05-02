@@ -3,12 +3,22 @@
 {% extends 'base.html.twig' %}
 
 {%
-    set dataHeader = {
-        'image' : '/img/finance2.jpg',
-        'title' : 'header title',
-        'subtitle' : 'header subtitle',
-        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-        'button'  : 'header button text',
+    set dataCarousel = {
+        1 : {
+            'image' : '/img/finance2.jpg',
+            'title' : 'blablatitle1',
+            'text' : 'blablatext1',
+        },
+        2 : {
+            'image' : '/img/famille.jpeg',
+            'title' : 'blablatitle2',
+            'text' : 'blablatext2',
+        },
+        3 : {
+            'image' : '/img/finance1.jpg',
+            'title' : 'blablatitle3',
+            'text' : 'blablatext3',
+        },
     }
 %}
 
@@ -61,7 +71,7 @@
 
 {% block body %}
 
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_left' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_carousel' , 'bg': 'bg-white', 'classe' : 'carousel', 'color' : 'white' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_text_image' , 'bg': 'bg-white', 'classe' : 'text_image', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_image_text' , 'bg': 'bg-white', 'classe' : 'image_text', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_image' , 'bg': 'bg-lightgrey', 'classe' : 'background-image', 'color' : 'white' } %}
