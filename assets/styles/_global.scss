@@ -11,7 +11,14 @@
 // customize some Bootstrap variables
 $primary: darken(#8babc9, 20%);
 
-
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
+
+a {
+    color: #fff!important;
+    list-style-type: none;
+}
+
+
+
 

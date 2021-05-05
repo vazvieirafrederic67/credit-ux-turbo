@@ -1,12 +1,12 @@
+<div style="background-image: url( {{ dataSimulator.image }})" id="simulator-image"></div>
+
 <turbo-frame id="simulator">
      
      <div class="selection">
-          <h3>Choisissez votre crédit:</h3>
+          <h3>Sélectionnez votre crédit:</h3>
           
           <select name="credits" id="credit-select">
-               
                {% for credit in credits %}
-                
                     {% if credit.actif == 'Yes' %}
                          <option data-max={{ credit.getMontantMax }} data-min={{ credit.getMontantMin }} data-taux="{{ credit.taux }}" value="{{ credit.id }}">{{ credit.designation }}</option>
                     {% endif %}

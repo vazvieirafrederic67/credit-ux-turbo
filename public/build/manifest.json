@@ -4,5 +4,7 @@
   "build/runtime.js": "/build/runtime.js",
   "build/vendors-node_modules_hotwired_turbo_dist_turbo_es2017-esm_js-node_modules_symfony_stimulus-br-dd2a54.js": "/build/vendors-node_modules_hotwired_turbo_dist_turbo_es2017-esm_js-node_modules_symfony_stimulus-br-dd2a54.js",
   "build/fonts/Roboto-Regular.ttf": "/build/fonts/Roboto-Regular.a8d6ac03.ttf",
-  "build/fonts/Roboto-Bold.ttf": "/build/fonts/Roboto-Bold.75371f53.ttf"
+  "build/fonts/Roboto-Bold.ttf": "/build/fonts/Roboto-Bold.75371f53.ttf",
+  "build/images/famille.jpeg": "/build/images/famille.d0cff701.jpeg",
+  "build/images/finance2.jpg": "/build/images/finance2.a8f7694a.jpg"
 }

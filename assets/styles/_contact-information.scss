@@ -33,3 +33,10 @@
 	color: #2196F3;
 	font-size: 15px;
 }
+
+.contact-information > .container > .row > div > .contact-item {
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
