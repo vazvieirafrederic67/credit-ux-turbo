@@ -83,10 +83,12 @@ a {
     padding-bottom: 10px;
 }
 
-.services > .container > .row > .col-md-4{
+.services > .container > .row > .col-lg-4{
     height: 400px;
+	margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.services > .container > .row > .col-md-4 > .service-item > .down-content{
+.services > .container > .row > .col-lg-4 > .service-item > .down-content{
     height: 200px;
 }
