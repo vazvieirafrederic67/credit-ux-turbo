@@ -1,0 +1,48 @@
+<turbo-frame id="form_request" class="form_request">
+
+    <div class="form_content">
+        <h2>Faites votre demande</h2>
+
+        {{ form_start(form) }}
+
+        <div class="form_content_left">
+
+            {{ form_row(form.lastname) }}
+
+            {{ form_row(form.firstname) }}
+
+            {{ form_row(form.phonenumber) }}
+
+            {{ form_row(form.email) }}
+
+            {{ form_row(form.dateDeNaissance) }}
+
+            {{ form_row(form.codepostal) }}
+
+            {{ form_row(form.pays) }}
+
+            {{ form_row(form.message) }}
+        
+        </div>
+
+        <div class="form_content_right">
+
+            {{ form_row(form.dureeDuPret) }}
+
+            {{ form_row(form.typeDeCredit) }}
+
+            {{ form_row(form.montantAEmprunter) }}
+        
+            {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_simulator' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
+
+            <div>
+                <button class="w3-blue" type="submit">Envoyer</button>
+            </div>
+        
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+
+    
+</turbo-frame>

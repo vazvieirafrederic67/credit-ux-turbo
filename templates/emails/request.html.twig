@@ -1,0 +1,17 @@
+{# templates/emails/request.html.twig #}
+
+<h3>Demande de prêt</h3>
+
+<p>Nom de famille : {{ formSend.lastname }} </p>
+<p>Prénom : {{ formSend.firstname }} </p>
+<p>Email : {{ formSend.email }} </p>
+<p>Numéro de téléphone : {{ formSend.phonenumber }} </p>
+<p>Date de naissance : {{ formSend.dateDeNaissance|date("d/m/Y", "Europe/Paris") }} </p>
+<p>Code postal : {{ formSend.codePostal }} </p>
+<p>Pays : {{ formSend.pays }} </p>
+
+<p>Durée du prêt : {{ formSend.dureeDuPret }} mois</p>
+<p>Type de crédit : {{ formSend.typeDeCredit }} </p>
+<p>Montant à emprunter : {{ formSend.montantAEmprunter }} €</p>
+  
+<p>Message : {{ formSend.message }} </p>

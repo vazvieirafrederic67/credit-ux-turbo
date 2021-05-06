@@ -1,0 +1,55 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Credit{% endblock %}
+
+{% block body %}
+
+    <div id="container-main">
+
+        <div class="menu">
+        
+            <a href="{{ path('credit_index') }}">back to list</a>
+
+            <a href="{{ path('credit_edit', {'id': credit.id}) }}">edit</a>
+        
+        </div>
+
+        <div class="content">
+        
+            <h1>Credit</h1>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ credit.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th>
+                        <td>{{ credit.designation }}</td>
+                    </tr>
+                    <tr>
+                        <th>Actif</th>
+                        <td>{{ credit.actif ? 'Yes' : 'No' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Montant_min</th>
+                        <td>{{ credit.montantMin }}</td>
+                    </tr>
+                    <tr>
+                        <th>Montant_max</th>
+                        <td>{{ credit.montantMax }}</td>
+                    </tr>
+                    <tr>
+                        <th>Taux</th>
+                        <td>{{ credit.taux }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        {{ include('credit/_delete_form.html.twig') }}
+
+    </div>
+    
+{% endblock %}

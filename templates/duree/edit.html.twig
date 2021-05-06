@@ -1,0 +1,28 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Edit Duree{% endblock %}
+
+{% block body %}
+
+
+    <div id="container-main">
+
+        <div class="menu">
+        
+            <a href="{{ path('duree_index') }}">back to list</a>
+        
+        </div>
+
+        <div class="content">
+        
+            <h1>Edit Duree</h1>
+
+            {{ include('duree/_form.html.twig', {'button_label': 'Update'}) }}
+
+            {{ include('duree/_delete_form.html.twig') }}
+        
+        </div>
+
+    </div>
+   
+{% endblock %}

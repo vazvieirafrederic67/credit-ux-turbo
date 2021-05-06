@@ -1,0 +1,14 @@
+#admin-main {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(69, 114, 151, 0.5);
+}
+
+#container-main {
+    width: 100%;
+    max-width: 1400px;
+}
+
+#container-main > .content > .table {
+   background-color: rgba(69, 114, 151, 0.5);
+}

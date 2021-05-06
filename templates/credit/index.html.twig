@@ -1,0 +1,55 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Credit index{% endblock %}
+
+{% block body %}
+
+    <div id="container-main">
+
+        <div class="menu">
+        
+            <a href="{{ path('credit_new') }}">Create new</a>
+        
+        </div>
+
+        <div class="content">
+        
+            <h1>Credit index</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Designation</th>
+                        <th>Actif</th>
+                        <th>Montant_min</th>
+                        <th>Montant_max</th>
+                        <th>Taux</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for credit in credits %}
+                    <tr>
+                        <td>{{ credit.designation }}</td>
+                        <td>{{ credit.actif ? 'Yes' : 'No' }}</td>
+                        <td>{{ credit.montantMin }}</td>
+                        <td>{{ credit.montantMax }}</td>
+                        <td>{{ credit.taux }}</td>
+                        <td>
+                            <a href="{{ path('credit_show', {'id': credit.id}) }}">show</a>
+                            <a href="{{ path('credit_edit', {'id': credit.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        
+        </div>
+
+    </div>
+    
+{% endblock %}

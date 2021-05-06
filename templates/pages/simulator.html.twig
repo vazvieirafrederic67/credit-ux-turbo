@@ -13,12 +13,6 @@
 %}
 
 {%
-    set dataSimulator = {
-        'image' : '/img/finance2.jpg',
-    }
-%}
-
-{%
     set dataCards = {
         1 : {
             'image' : '/img/finance4.jpeg',
@@ -38,14 +32,20 @@
     }
 %}
 
+{%
+    set dataImage = {
+        'image' : '/img/slide_01.jpg',
+    }
+%}
+
 
 {% block title 'Simulateur' %}
 
 {% block body %}
     
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_right' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_simulator' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
-     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_cards' , 'bg': 'bg-lightgrey', 'classe' : 'container-fluid', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_simulator_image' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'content-simulator'} %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_cards' , 'bg': 'bg-lightgrey', 'classe' : 'container-fluid', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'white' } %}
 
 {% endblock %}
