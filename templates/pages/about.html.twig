@@ -12,9 +12,36 @@
     }
 %}
 
+{%
+    set dataLists = {
+        1 : {
+                'image' : '/img/team_01.jpg',
+                'title' : 'list title',
+                'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        },
+        2 : {
+                'image' : '/img/team_02.jpg',
+                'title' : 'list title2',
+                'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        },
+        3 : {
+                'image' : '/img/team_03.jpg',
+                'title' : 'list title3',
+                'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        },
+        4 : {
+                'image' : '/img/team.jpeg',
+                'title' : 'list title4',
+                'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        }
+    }
+%}
+
 {% block title 'A propos' %}
 
 {% block body %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_right' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_lists' , 'bg': 'bg-white', 'classe' : 'container-fluid', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'white' } %}
+    
 {% endblock %}

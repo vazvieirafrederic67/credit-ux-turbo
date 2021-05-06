@@ -18,10 +18,18 @@
     }
 %}
 
+{%
+    set button = {
+        'text' : 'Envoyer',
+    }
+%}
+
 {% block title 'Request' %}
 
-{% block body %}    
+{% block body %}
+
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_left' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_simulator_form' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'content-simulator'} %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'black' } %}
+    
 {% endblock %}

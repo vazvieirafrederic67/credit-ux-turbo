@@ -92,7 +92,6 @@ $( document ).ready(function() {
 
      showDurees(durees, principal, typeCredit);
      
-
      $('#taeg_resum').text( interest * 100 );
      $('#taux_resum').text( interest * 100 );
      
@@ -124,6 +123,7 @@ $( document ).ready(function() {
                     $('#taeg_resum').text( financial(data.taux * 100) );
                     $('#taux_resum').text( financial(data.taux * 100) );
                     cardClick(typeCredit, principal);
+                    
                }
           });
 
@@ -150,6 +150,7 @@ $( document ).ready(function() {
                creditFormContent.appendChild(child);
                $('#duration_resum').text(element);
                $('#total_amount_resum').text( financial(element * paye_mensuel) );
+               $('#demande_credit_dureeDuPret').val(parseInt(element));
           });
           cardClick(typeCredit, principal);
      }
@@ -178,6 +179,7 @@ $( document ).ready(function() {
                $('#total_amount_resum').text( financial(element * paye_mensuel) );
           });
           cardClick(typeCredit, principal);
+          
      });
 
      function trouve_paiement(PR, IN, PE) {
@@ -189,7 +191,10 @@ $( document ).ready(function() {
           return Number.parseFloat(x).toFixed(2);
      }
 
-     function cardClick(typeCredit, principal){       
+     function cardClick(typeCredit, principal){    
+
+          $('#demande_credit_typeDeCredit').val(parseInt(typeCredit));
+          $('#demande_credit_montantAEmprunter').val(parseInt(principal));
 
           $('.card').click(function(){
                var  amount_selected = $(this).children('div.amount').text(),
@@ -205,8 +210,6 @@ $( document ).ready(function() {
                $('#demande_credit_montantAEmprunter').val(parseInt(principal));
           })
      }
-
-     
      
      var  amount_selected = $('.card').last().children('div.amount').text(),
           time_selected = $('.card').last().children('div.time').text()
@@ -216,6 +219,7 @@ $( document ).ready(function() {
      $('#demande_credit_dureeDuPret').val(parseInt(time_selected));
      $('#demande_credit_typeDeCredit').val(parseInt(typeCredit));
      $('#demande_credit_montantAEmprunter').val(parseInt(principal));
+
 });
 
 </script>

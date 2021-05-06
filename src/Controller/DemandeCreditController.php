@@ -33,7 +33,12 @@ class DemandeCreditController extends AbstractController
         $blankForm = clone $form;
         $form->handleRequest($request);
 
+        
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            dd('test');
+
             $contactName = $form->get('firstname')->getData();
 
             if (TurboStreamResponse::STREAM_FORMAT === $request->getPreferredFormat()) {
