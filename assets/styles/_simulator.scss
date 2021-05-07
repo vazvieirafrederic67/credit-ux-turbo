@@ -46,6 +46,11 @@
 #simulator > .select_amount > .slidecontainer {
     width: 100%;
 }
+
+#simulator > .select_amount > .slidecontainer > div > div {
+    display: flex;
+    flex-direction: row;
+}
   
 #simulator > .select_amount > .slidecontainer > div > .slider {
     -webkit-appearance: none;
