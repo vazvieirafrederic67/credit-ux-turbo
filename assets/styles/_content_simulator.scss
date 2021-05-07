@@ -59,3 +59,10 @@
  .content-simulator > div > form > div > div > #demande_credit_montantAEmprunter {
     display: none;
  }
+
+ .content-simulator > div > form > div > .button-form {
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+ }

@@ -149,7 +149,7 @@ $( document ).ready(function() {
                child.appendChild(childTime);
                creditFormContent.appendChild(child);
                $('#duration_resum').text(element);
-               $('#total_amount_resum').text( financial(element * paye_mensuel) );
+               $('#total_amount_resum').text( financial(element * parseFloat(paye_mensuel).toFixed(2)) );
                $('#demande_credit_dureeDuPret').val(parseInt(element));
           });
           cardClick(typeCredit, principal);
@@ -176,7 +176,12 @@ $( document ).ready(function() {
                child.appendChild(childAmount);
                child.appendChild(childTime);
                creditFormContent.appendChild(child);
-               $('#total_amount_resum').text( financial(element * paye_mensuel) );
+               var finalElement = $('#duration_resum').text();
+
+               if (parseInt(finalElement) == parseInt(element)) {
+                    $('#total_amount_resum').text( (parseFloat(paye_mensuel).toFixed(2) * parseInt(element)).toFixed(2) );
+               }
+       
           });
           cardClick(typeCredit, principal);
           
@@ -188,7 +193,7 @@ $( document ).ready(function() {
      }
 
      function financial(x) {
-          return Number.parseFloat(x).toFixed(2);
+          return Number.parseFloat(x).toFixed(2).replace('.', ',');
      }
 
      function cardClick(typeCredit, principal){    
@@ -201,7 +206,10 @@ $( document ).ready(function() {
                     time_selected = $(this).children('div.time').text()
                ;
 
-               $('#total_amount_resum').text(parseInt(amount_selected) * parseInt(time_selected));
+               var text = amount_selected.replace(',','.');
+               var resultat = ((parseFloat(text) * parseInt(time_selected)).toFixed(2)).replace('.',',');
+
+               $('#total_amount_resum').text(resultat);
                $('#duration_resum').text(parseInt(time_selected));
 
                /*Remplir les champs cachés*/
@@ -218,7 +226,7 @@ $( document ).ready(function() {
      /*Remplir les champs cachés*/
      $('#demande_credit_dureeDuPret').val(parseInt(time_selected));
      $('#demande_credit_typeDeCredit').val(parseInt(typeCredit));
-     $('#demande_credit_montantAEmprunter').val(parseInt(principal));
+     $('#demande_credit_montantAEmprunter').val(parseInt( principal ));
 
 });
 
