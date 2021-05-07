@@ -73,7 +73,15 @@ duree_delete:
     controller: App\Controller\DureeController::delete
     methods: POST
 
-app_register:
-    path: /register
-    controller: App\Controller\RegistrationController::register
+app_login:
+    path: /log-mon-credit-europeen
+    controller: App\Controller\SecurityController::login
+
+app_logout:
+    path: /logout
+    controller: App\Controller\SecurityController::logout
+
+#app_register:
+#    path: /register
+#    controller: App\Controller\RegistrationController::register
 

@@ -91,9 +91,11 @@ $( document ).ready(function() {
      {% endfor %}
 
      showDurees(durees, principal, typeCredit);
+
+     var newInterest = (interest * 100);
      
-     $('#taeg_resum').text( interest * 100 );
-     $('#taux_resum').text( interest * 100 );
+     $('#taeg_resum').text( Number.parseFloat(newInterest).toFixed(2).replace('.', ',') );
+     $('#taux_resum').text( Number.parseFloat(newInterest).toFixed(2).replace('.', ',') );
      
      $("#credit-select").change(function(){
           var id = $(this).val(),
@@ -179,7 +181,7 @@ $( document ).ready(function() {
                var finalElement = $('#duration_resum').text();
 
                if (parseInt(finalElement) == parseInt(element)) {
-                    $('#total_amount_resum').text( (parseFloat(paye_mensuel).toFixed(2) * parseInt(element)).toFixed(2) );
+                    $('#total_amount_resum').text( (parseFloat(paye_mensuel).toFixed(2) * parseInt(element)).toFixed(2).replace('.',',') );
                }
        
           });

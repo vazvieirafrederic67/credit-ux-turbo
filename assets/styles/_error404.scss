@@ -1,0 +1,13 @@
+.error404 {
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error404 > p > a {
+
+    color: blue!important;
+}

@@ -1,6 +1,6 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Edit Credit{% endblock %}
+{% block title %}Editer Crédit{% endblock %}
 
 {% block body %}
 
@@ -9,16 +9,16 @@
         <div class="menu">
         
         
-            <a href="{{ path('credit_index') }}">back to list</a>
+            <a href="{{ path('credit_index') }}">Revenir à la liste</a>
         
         
         </div>
 
         <div class="content">
         
-            <h1>Edit Credit</h1>
+            <h1>Editer un crédit</h1>
             
-            {{ include('credit/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('credit/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
             
             {{ include('credit/_delete_form.html.twig') }}
         

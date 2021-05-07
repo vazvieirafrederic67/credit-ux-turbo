@@ -1,6 +1,6 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Edit Duree{% endblock %}
+{% block title %}Edition Duree{% endblock %}
 
 {% block body %}
 
@@ -9,7 +9,7 @@
 
         <div class="menu">
         
-            <a href="{{ path('duree_index') }}">back to list</a>
+            <a href="{{ path('duree_index') }}">retour à la liste</a>
         
         </div>
 
@@ -17,7 +17,7 @@
         
             <h1>Edit Duree</h1>
 
-            {{ include('duree/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('duree/_form.html.twig', {'button_label': 'Mise à jour'}) }}
 
             {{ include('duree/_delete_form.html.twig') }}
         
