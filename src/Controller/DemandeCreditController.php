@@ -34,12 +34,13 @@ class DemandeCreditController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
+           
             $contactName = $form->get('firstname')->getData();
 
             if (TurboStreamResponse::STREAM_FORMAT === $request->getPreferredFormat()) {
-
+                
                 $formSend = $form->getData();
+
                 $credit = $creditRepository->find($demandeCredit->getTypeDeCredit());
                 $demandeCredit->setTypeDeCredit($credit->getDesignation());
                 $mailService->sendMailRequest($demandeCredit);
@@ -60,8 +61,20 @@ class DemandeCreditController extends AbstractController
             $mailService->sendMailRequest($demandeCredit);
            
             $this->addFlash('success', $formSend->getFirstname().', votre message a bien été envoyer!');
-            return $this->redirect($this->generateUrl('demande_pret').'#demande_credit_lastname');
 
+            return $this->redirectToRoute('app_request', [], Response::HTTP_SEE_OTHER);
+        }
+
+        if ($form->isSubmitted() && !$form->isValid()) {
+
+            $content = $this->renderView('pages/request.html.twig',[
+                'page' => $this->page ,
+                'form' => $form->createView(), 
+                'credits' => $this->credits, 
+                'mensualites' => $mensualites
+            ]);
+
+            return new Response($content, Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         return $this->render('pages/request.html.twig',[

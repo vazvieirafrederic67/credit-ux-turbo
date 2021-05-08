@@ -10,6 +10,7 @@ class Contact
 {
 
     /**
+     * @Assert\NotBlank(message="Ce champs est obligatoire.")
      * @Assert\Length(
      *      min = 3,
      *      max = 50,
@@ -20,6 +21,7 @@ class Contact
     protected $lastname;
 
     /**
+     * @Assert\NotBlank(message="Ce champs est obligatoire.")
      * @Assert\Length(
      *      min = 3,
      *      max = 50,
@@ -30,7 +32,7 @@ class Contact
     protected $firstname;
 
     /**
-    * @Assert\NotBlank
+    * @Assert\NotBlank(message="Ce champs est obligatoire.")
     * @Assert\Length(min=8)
     * @Assert\Range(
     *      min = 0,
@@ -42,6 +44,7 @@ class Contact
 
 
     /**
+    * @Assert\NotBlank(message="Ce champs est obligatoire.")
     * @Assert\Email(
     *     message = "L'email '{{ value }}' n'est pas valide."
     * )
@@ -49,6 +52,7 @@ class Contact
     protected $email;
 
      /**
+     * @Assert\NotBlank(message="Ce champs est obligatoire.") 
      * @Assert\Length(
      *      min = 6,
      *      max = 250,

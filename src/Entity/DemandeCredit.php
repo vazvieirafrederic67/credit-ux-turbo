@@ -11,6 +11,7 @@ class DemandeCredit
 {
 
      /**
+     * @Assert\NotBlank(message="Ce champs est obligatoire.")
      * @Assert\Length(
      *      min = 3,
      *      max = 50,
@@ -21,6 +22,7 @@ class DemandeCredit
     protected $lastname;
 
      /**
+    * @Assert\NotBlank(message="Ce champs est obligatoire.")
      * @Assert\Length(
      *      min = 3,
      *      max = 50,
@@ -31,7 +33,7 @@ class DemandeCredit
     protected $firstname;
 
     /**
-    * @Assert\NotBlank
+    * @Assert\NotBlank(message="Ce champs est obligatoire.")
     * @Assert\Length(min=8)
     * @Assert\Range(
     *      min = 0,
@@ -42,6 +44,7 @@ class DemandeCredit
     protected $phonenumber;
 
     /**
+    * @Assert\NotBlank(message="Ce champs est obligatoire.")
     * @Assert\Email(
     *     message = "L'email '{{ value }}' n'est pas valide."
     * )
@@ -49,6 +52,7 @@ class DemandeCredit
     protected $email;
 
     /**
+     * @Assert\NotBlank(message="Ce champs est obligatoire.")
      * @Assert\Length(
      *      min = 6,
      *      max = 250,
@@ -61,17 +65,21 @@ class DemandeCredit
     protected $dateDeNaissance;
 
     /**
+    * @Assert\NotBlank(message="Ce champs est obligatoire.")
     * @Assert\Range(
-    *      min = 0,
+    *      min = 1000,
     *      max = 99999,
     *      notInRangeMessage = "Le nombre doit etre entre {{ min }} et {{ max }}",
     * )
     */
-    protected $codePostal;
+    protected $codepostal;
 
     /**
-    * @Assert\NotBlank
-    * @Assert\Length(min=2)
+    * @Assert\NotBlank(message="Ce champs est obligatoire.")
+    * @Assert\Length(
+    *   min = 2,
+    *   minMessage = "Selectionnez un pays."
+    *   )
     */
     protected $pays;
 
@@ -103,7 +111,6 @@ class DemandeCredit
     {
         $this->firstname = $firstname;
     }
-
 
     public function getPhoneNumber(): ?int
     {
@@ -147,12 +154,12 @@ class DemandeCredit
    
     public function getCodePostal()
     {
-        return $this->codePostal;
+        return $this->codepostal;
     }
 
-    public function setCodePostal($codePostal)
+    public function setCodePostal($codepostal)
     {
-        $this->codePostal = $codePostal;
+        $this->codepostal = $codepostal;
     }
 
     public function getPays()

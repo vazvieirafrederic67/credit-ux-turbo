@@ -23,44 +23,44 @@
     padding:20px;
 }
 
-.content-simulator > div > form {
+.content-simulator > #form_request > div > form {
   display: flex;
   flex-direction: row;
 }
 
-.content-simulator > div > form > div {
+.content-simulator > #form_request > div > form > div {
     padding:10px;
   }
 
-.content-simulator > div > form > .content-form {
+.content-simulator > #form_request > div > form > .content-form {
     height: auto;
 }
 
-.content-simulator > div > form > .content-form > div {
-    height: 55px;
+.content-simulator > #form_request > div > form > .content-form > div {
+    height: 75px;
 }
 
-.content-simulator > div > form > .content-form > div:last-of-type {
+.content-simulator > #form_request > div > form > .content-form > div:last-of-type {
     height: 200px;
 }
 
-.content-simulator > div > form > .content-form > div > textarea {
+.content-simulator > #form_request > div > form > .content-form > div > textarea {
     height: 100%;
 }
 
-.content-simulator > div > form > div > div > #demande_credit_dureeDuPret {
+.content-simulator > #form_request > div > form > div > div > #demande_credit_dureeDuPret {
    display: none;
 }
 
-.content-simulator > div > form > div > div > #demande_credit_typeDeCredit {
+.content-simulator > #form_request > div > form > div > div > #demande_credit_typeDeCredit {
     display: none;
  }
 
- .content-simulator > div > form > div > div > #demande_credit_montantAEmprunter {
+ .content-simulator > #form_request > div > form > div > div > #demande_credit_montantAEmprunter {
     display: none;
  }
 
- .content-simulator > div > form > div > .button-form {
+ .content-simulator > #form_request > div > form > div > .button-form {
      height: 50px;
      display: flex;
      align-items: center;

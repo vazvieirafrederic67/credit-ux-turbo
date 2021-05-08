@@ -1,0 +1,64 @@
+{%
+    set button = {
+        'text' : 'Envoyer',
+    }
+%}
+
+{# Mise à jour du formulaire pour vider les champs #}
+<turbo-stream action="update" target="form_request">
+    <template>
+        <div class="row">
+
+        <h2>Faites votre demande de prêt : </h2>
+
+        {{ form_start(form, {'attr' : { 'class' : 'row'}} ) }}
+        <div class="col-md-12 col-lg-6 content-form">
+
+            {{ form_row(form.lastname) }}
+            {{ form_row(form.firstname) }}
+            {{ form_row(form.dateDeNaissance) }}
+            {{ form_row(form.codepostal) }}
+            {{ form_row(form.pays) }}
+            {{ form_row(form.phonenumber) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.message) }}
+
+        </div>
+            
+        <div class="col-md-12 col-lg-6">
+
+            {{ form_rest(form) }}
+
+            {%  include 'blocks/_block.html.twig' with {'component' : 'partials/_simulator' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
+            {%  include 'blocks/_block.html.twig' with {'component' : 'partials/_button_form' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'button-form'} %}
+        
+        </div>
+            
+            {{ form_end(form) }}
+        </div>
+
+        <script data-turbo-eval = "true" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script data-turbo-eval = "true" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script data-turbo-eval = "true" type="module">
+            jQuery(document).ready(function() {
+                $('.js-datepicker').datepicker({ 
+                    dateFormat: 'dd-mm-yy',
+                    yearRange: "-100:+0",
+                    monthNamesShort: [ "Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Juil", "Août", "Sep", "Oct", "Nov", "Déc" ],
+                    changeYear: true,
+                    changeMonth: true
+                });
+            });
+        </script>
+    </template>
+</turbo-stream>
+
+{# Ajout d'un "flash message" au dessus du formulaire, dans la frame "contact_form" #}
+<turbo-stream action="append" target="form_request">
+    <template>
+        <p style="font-weight: bold; color: green">Merci pour votre demande {{ contactName }}, nous allons vous contacter rapidement!</p>
+
+        <hr>
+    </template>
+</turbo-stream>
