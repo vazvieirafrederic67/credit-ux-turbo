@@ -10,6 +10,9 @@
             {% if dataCarousel.1.text is defined %}
               <p class="text {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.1.text }}</p>
             {% endif %}
+            {% if dataCarousel.1.button is defined %}
+              <a class="btn btn-primary" href="{{ dataCarousel.1.link }}" role="button">{{ dataCarousel.1.button }}</a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -24,6 +27,9 @@
             {% if dataCarousel.2.text is defined %}
               <p class="text {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.2.text }}</p>
             {% endif %}
+            {% if dataCarousel.2.button is defined %}
+               <a class="btn btn-primary" href="{{ dataCarousel.2.link }}" role="button">{{ dataCarousel.2.button }}</a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -37,6 +43,9 @@
             {% endif %}
             {% if dataCarousel.3.text is defined %}
               <p class="text {% if color is defined %} {{ color }} {% endif %}">{{ dataCarousel.3.text }}</p>
+            {% endif %}
+            {% if dataCarousel.3.button is defined %}
+              <a class="btn btn-primary" href="{{ dataCarousel.3.link }}" role="button">{{ dataCarousel.3.button }}</a>
             {% endif %}
           </div>
         </div>
