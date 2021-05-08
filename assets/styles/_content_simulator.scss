@@ -23,9 +23,16 @@
     padding:20px;
 }
 
+.content-simulator > #form_request > div {
+    margin: 0;
+    padding: 0;
+}
+
 .content-simulator > #form_request > div > form {
   display: flex;
   flex-direction: row;
+  margin:0;
+  padding:0;
 }
 
 .content-simulator > #form_request > div > form > div {
@@ -66,3 +73,15 @@
      align-items: center;
      justify-content: flex-end;
  }
+
+ .content-simulator > #form_request > p {
+     text-align: end;
+ }
+
+
+
+@media (min-width: 1400px) {
+    .content-simulator > #form_request > div > h2 {
+        padding-left: 5vw!important;
+    }
+}

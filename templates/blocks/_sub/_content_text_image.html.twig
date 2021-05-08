@@ -18,7 +18,7 @@
                     {% endif %}
 
                     {% if dataTextImage.button is defined %}
-                        {% include 'partials/_button.html.twig' with { 'button' : dataTextImage.button }  %}
+                        {% include 'partials/_button.html.twig' with { 'button' : dataTextImage.button , 'link' : dataTextImage.link}  %}
                     {% endif %}
 
                   </div>

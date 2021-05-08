@@ -4,8 +4,8 @@
 
       <h2>Faites votre demande de prêt : </h2>
 
-      {{ form_start(form, {'attr' : { 'class' : 'row'}} ) }}
-      <div class="col-md-12 col-lg-6 content-form">
+      {{ form_start(form, {'attr' : { 'class' : 'row justify-content-around'}} ) }}
+      <div class="col-md-12 col-lg-6 col-xxl-5 content-form">
 
         {{ form_row(form.lastname) }}
         {{ form_row(form.firstname) }}
@@ -18,12 +18,12 @@
 
       </div>
         
-      <div class="col-md-12 col-lg-6">
+      <div class="col-md-12 col-lg-6 col-xxl-5">
 
         {{ form_rest(form) }}
 
         {%  include 'blocks/_block.html.twig' with {'component' : 'partials/_simulator' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
-        {%  include 'blocks/_block.html.twig' with {'component' : 'partials/_button_form' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'button-form'} %}
+        {%  include 'blocks/_block.html.twig' with {'component' : 'partials/_button_form' , 'bg': 'bg-white', 'color': 'white' , 'classe' : 'button-form'} %}
       
       </div>
       
