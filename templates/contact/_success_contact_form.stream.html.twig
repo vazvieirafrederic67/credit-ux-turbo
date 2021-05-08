@@ -1,0 +1,68 @@
+{# Mise à jour du formulaire pour vider les champs #}
+<turbo-stream action="update" target="form_contact">
+    <template>
+        <div class="callback-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Prenons contact <em>ensembles</em></h2>
+                        <span>Formulaire pour une demande d'information</span>
+                    </div>
+                    </div>
+                    <div class="col-md-12">
+                    <div class="contact-form">
+                        {{ form_start(form) }}
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                            <fieldset>
+                                {{ form_row(form.lastname) }}
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                            <fieldset>
+                                {{ form_row(form.firstname) }}
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                            <fieldset>
+                                {{ form_row(form.phonenumber) }}
+                            </fieldset>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                            <fieldset>
+                                {{ form_row(form.email) }}
+                            </fieldset>
+                            </div>
+
+                            <div class="col-lg-12">
+                            <fieldset>
+                                {{ form_row(form.message) }}
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                            <fieldset>
+                                <button type="submit" id="form-submit" class="border-button">Envoyer</button>
+                            </fieldset>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </template>
+</turbo-stream>
+
+{# Ajout d'un "flash message" au dessus du formulaire, dans la frame "contact_form" #}
+<turbo-stream action="append" target="form_contact">
+    <template>
+        <p style="font-weight: bold; color: green">Merci pour votre message {{ contactName }}, nous allons vous contacter rapidement!</p>
+
+        <hr>
+    </template>
+</turbo-stream>
