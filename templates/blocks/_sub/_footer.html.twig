@@ -1,39 +1,39 @@
-<div {% if classe is defined %} id="{{ classe }}" {% endif %}>
-    <div {% if color is defined %} class="{{ color }}" {% endif %}>
-        <!-- Footer Starts Here -->
+<div {% if classe is defined %} id="{{ classe }}" {% endif %} {% if color is defined %} class="{{ color }}" {% endif %}>
+  
+  <!-- Footer Starts Here -->
     
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-12 footer-item">
-            <h4>Contactez-nous</h4>
-            <p>Tél: +32 460 95 92 60</p>
-            <a data-toggle="tooltip" data-placement="right"  title="Envoyer un email" href="mailto:Philippe.occwin@gmail.com"> Contactez-nous par mail</a>
-          </div>
-          <div class="col-lg-4 col-md-12 footer-item">
-            <h4>Finance Business</h4>
-            <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
-          </div>
-          <div class="col-lg-4 col-md-12 footer-item">
-            <h4>Pages</h4>
-            <ul class="menu-list">
-              <li><a href="{{ path('app_homepage') }}">Page d'accueil</a></li>
-              <li><a href="{{ path('app_simulator') }}">Simulateur</a></li>
-              <li><a href="{{ path('app_request') }}">Demande de prêt</a></li>
-              <li><a href="{{ path('app_about') }}">A propos</a></li>
-              <li><a href="{{ path('app_contact') }}">Contact</a></li>
-            </ul>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-12 footer-item">
+        <h4>Contactez-nous</h4>
+        <p>Tél: +32 460 95 92 60</p>
+        <a data-toggle="tooltip" data-placement="right"  title="Envoyer un email" href="mailto:Philippe.occwin@gmail.com"> Contactez-nous par mail</a>
       </div>
-    
-    <div class="sub-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p>Powered by Opales.lu<p>
-          </div>
+      <div class="col-lg-4 col-md-12 footer-item">
+        <h4>Finance Business</h4>
+        <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
+      </div>
+      <div class="col-lg-4 col-md-12 footer-item">
+        <h4>Pages</h4>
+        <ul class="menu-list">
+          <li><a href="{{ path('app_homepage') }}">Page d'accueil</a></li>
+          <li><a href="{{ path('app_simulator') }}">Simulateur</a></li>
+          <li><a href="{{ path('app_request') }}">Demande de prêt</a></li>
+          <li><a href="{{ path('app_about') }}">A propos</a></li>
+          <li><a href="{{ path('app_contact') }}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Powered by Opales.lu<p>
         </div>
       </div>
     </div>
-    </div>
+  </div>
+    
 </div
