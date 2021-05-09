@@ -36,19 +36,27 @@
 
 .carousel > div > div > div > div > .carousel-content-outer > .carousel-content-inner {
     background-color: rgba(211, 211, 211, 0.5);
-    width: 30vw;
-    height: 25vh;
+    height: 20vh;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 90%;
 }
 
 .carousel > div > div > div > div > .carousel-content-outer > .carousel-content-inner > a {
     width: 50%;
 }
 
-
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+    .carousel > div > div > div > div > .carousel-content-outer {
+        width: 100%;
+    }
+    .carousel > div > div > div > div > .carousel-content-outer {
+        width: 80%;
+    }
+  }
 
 
 

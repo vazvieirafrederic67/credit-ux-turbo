@@ -23,7 +23,7 @@ export default class extends Controller {
         
         var myCarousel = document.querySelector('#carousel')
         var carousel = new bootstrap.Carousel(myCarousel, {
-            interval: 5000,
+            interval: 6000,
             wrap: true,
             pause: false,
             touch: true,

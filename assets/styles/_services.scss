@@ -85,11 +85,18 @@ a {
 }
 
 .services > .container > .row > .col-lg-4{
-    height: 400px;
+    height: auto;
 	margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .services > .container > .row > .col-lg-4 > .service-item > .down-content{
-    height: 200px;
+    height: 280px;
 }
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 1000px) {
+	.services > .container > .row > .col-lg-4 > .service-item > .down-content{
+		height: 150px;
+	}
+  }
