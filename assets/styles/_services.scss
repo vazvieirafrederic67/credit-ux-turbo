@@ -6,9 +6,11 @@
     padding-bottom: 50px;
 }
 
-.service-item img {
+.service-item > div {
 	width: 100%;
 	overflow: hidden;
+	background-size: cover;
+	background-position: center;
 }
 
 .service-item .down-content {

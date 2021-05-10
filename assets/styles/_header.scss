@@ -1,5 +1,5 @@
 .header {
-    height: 70vh;
+    height: 80vh;
     width: 100%;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .image > .content-left-outer > .content-left-inner {
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: rgba(211, 211, 211, 0.6);
     width: 100%;
     max-width: 700px;
     height: 50%;
@@ -37,7 +37,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    padding: 10px;
+    padding: 30px;
 }
 
 .image > .content-right-outer {
@@ -50,7 +50,7 @@
 }
 
 .image > .content-right-outer > .content-right-inner {
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: rgba(211, 211, 211, 0.6);
     width: 100%;
     max-width: 700px;
     height: 50%;
@@ -58,7 +58,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    padding: 10px;
+    padding: 30px;
 }
 
 .image > .content-left-outer > .content-left-inner > .button {

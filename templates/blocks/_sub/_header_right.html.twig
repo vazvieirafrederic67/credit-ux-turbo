@@ -10,7 +10,7 @@
                     <div class="subtitle {% if dataHeader.title is defined %} {{ color }} {% endif %}"><h2>{{ dataHeader.subtitle }}</h2></div>
                 {% endif %}
                 {% if dataHeader.text is defined %}
-                    <div class="text {% if dataHeader.title is defined %} {{ color }} {% endif %}"><p>{{ dataHeader.text }}</p></div>
+                    <div class="text {% if dataHeader.title is defined %} {{ color }} {% endif %}"><p>{{ dataHeader.text|raw }}</p></div>
                 {% endif %}
                 {% if dataHeader.button is defined %}
                     {% include 'partials/_button.html.twig' with { 'button' : dataHeader.button }  %}

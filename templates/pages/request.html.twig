@@ -4,11 +4,9 @@
 
 {%
     set dataHeader = {
-        'image' : '/img/famille.jpeg',
-        'title' : 'header title',
-        'subtitle' : 'header subtitle',
-        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-
+        'image' : '/img/header_request.jpeg',
+        'title' : 'Demande de prêt en ligne',
+        'text'  : "Nous sommes à votre disposition pour toute demande. Veuillez remplir le formulaire, nous vous contactons rapidement.",
     }
 %}
 
@@ -30,6 +28,6 @@
 
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_left' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_simulator_form' , 'bg': 'bg-white', 'color': 'white' , 'classe' : 'content-simulator'} %}
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'white' } %}
     
 {% endblock %}

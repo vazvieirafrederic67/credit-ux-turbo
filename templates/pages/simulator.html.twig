@@ -4,10 +4,9 @@
 
 {%
     set dataHeader = {
-        'image' : '/img/finance1.jpg',
-        'title' : 'header title',
-        'subtitle' : 'header subtitle',
-        'text'  : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        'image' : '/img/simulateur_pret.jpeg',
+        'title' : 'Simulateur',
+        'text'  : "Nous vous offrons la possibilité de simuler votre demande de prêt via notre simulateur pour une offre complète et personnalisé aux meilleur taux d’intérêt.",
 
     }
 %}
@@ -34,9 +33,17 @@
 
 {%
     set dataImage = {
-        'image' : '/img/slide_01.jpg',
+        'image' : '/img/calcul_pret.jpeg',
         'title' : 'Simulateur de prêt',
         'text' : 'Testez-le!'
+    }
+%}
+
+
+{%
+    set button = {
+        'text' : 'Demande de prêt!',
+        'link'  : '/demande-de-prêt'
     }
 %}
 
@@ -47,6 +54,7 @@
     
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_right' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_simulator_image' , 'bg': 'bg-white', 'color': 'white' , 'classe' : 'content-simulator'} %}
+    {%  include 'partials/_button.html.twig' with {'bg': 'bg-white', 'color': 'white' , 'classe' : 'd-flex justify-content-center pb-4 pt-4', 'button' : button.text, 'link' : button.link } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_warning' , 'bg': 'bg-lightgrey', 'color': 'black' , 'classe' : 'warning'} %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_cards' , 'bg': 'bg-white', 'classe' : 'container-fluid', 'color' : 'black' } %}
     {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'white' } %}
