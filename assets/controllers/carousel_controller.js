@@ -1,6 +1,5 @@
 import { Controller } from 'stimulus';
 
-
 /*
  * This is an example Stimulus controller!
  *
@@ -18,8 +17,6 @@ export default class extends Controller {
     }  
 
     myParentFunction(bootstrap){
-        
-        
         
         var myCarousel = document.querySelector('#carousel')
         var carousel = new bootstrap.Carousel(myCarousel, {
