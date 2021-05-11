@@ -11,6 +11,12 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 
+import {$,jQuery} from 'jquery';
+
+// export for others scripts to use
+window.$ = $;
+window.jQuery = jQuery;
+
 
 
 

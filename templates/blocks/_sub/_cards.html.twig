@@ -1,6 +1,6 @@
 <div class="services">
     <div class="container">
-        <div id="cards" class="row">
+        <div class="row">
             <div class="col-md-12">
             <div class="section-heading">
                 <h2>Nos <em>Services</em></h2>
@@ -10,22 +10,20 @@
             </div>
 
             {% for card in dataCards %}
-
-            <div id="card{{loop.index}}" {% if card.link is defined %} data-link="{{ card.link }}" {% endif %} class="col-md-12 col-lg-4">
-                <div class="service-item">
-                    <div class="card-image col-12" style="background-image: url({{ card.image }}); background-size:cover; height:200px; background-repeat: no-repeat;"></div>
-                    <div class="down-content">
-                        <h4>{{ card.title }}</h4>
-                        <p>{{ card.text }}</p>
+                <a {% if card.link is defined %} href="{{ card.link }}" {% else %} href="#" {% endif %} class="col-md-12 col-lg-4">
+                    <div class="service-item">
+                        <div class="card-image col-12" style="background-image: url({{ card.image }}); background-size:cover; height:200px; background-repeat: no-repeat;"></div>
+                        <div class="down-content black">
+                            <h4>{{ card.title }}</h4>
+                            <p>{{ card.text }}</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-
+                </a>
             {% endfor %}
         </div>
     </div>
 </div>
-
+<!--
 <script data-turbo-eval = "true" type="module">
 
     var elementOne = document.getElementById('card1');
@@ -47,3 +45,4 @@
     });
                 
 </script>
+-->
