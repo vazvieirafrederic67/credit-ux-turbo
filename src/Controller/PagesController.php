@@ -36,4 +36,11 @@ final class PagesController extends AbstractController
     {
         return $this->render('pages/about.html.twig');
     }
+
+
+    #[Route('/conditions', name: 'app_conditions')]
+    public function conditions(): Response
+    {
+        return $this->render('pages/conditions_generales.html.twig');
+    }
 }
