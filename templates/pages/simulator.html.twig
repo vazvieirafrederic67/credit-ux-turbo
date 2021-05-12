@@ -55,11 +55,11 @@
 
 {% block body %}
     
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_header_right' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_content_simulator_image' , 'bg': 'bg-white', 'color': 'white' , 'classe' : 'content-simulator'} %}
+    {%  include 'blocks/_block.html.twig' with {'component' : '_sub/_header_right' , 'bg': 'bg-white', 'classe' : 'header', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : '_sub/_content_simulator_image' , 'bg': 'bg-white', 'color': 'white' , 'classe' : 'content-simulator'} %}
     {%  include 'partials/_button.html.twig' with {'bg': 'bg-white', 'color': 'white' , 'classe' : 'd-flex justify-content-center pb-4 pt-4', 'button' : button.text, 'link' : button.link } %}
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_warning' , 'bg': 'bg-lightgrey', 'color': 'black' , 'classe' : 'warning'} %}
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_cards' , 'bg': 'bg-white', 'classe' : 'container-fluid', 'color' : 'black' } %}
-    {%  include 'blocks/_block.html.twig' with {'component' : 'blocks/_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'white' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : '_sub/_warning' , 'bg': 'bg-lightgrey', 'color': 'black' , 'classe' : 'warning'} %}
+    {%  include 'blocks/_block.html.twig' with {'component' : '_sub/_cards' , 'bg': 'bg-white', 'classe' : 'container-fluid', 'color' : 'black' } %}
+    {%  include 'blocks/_block.html.twig' with {'component' : '_sub/_footer' , 'bg': 'bg-primary', 'classe' : 'footer', 'color' : 'white' } %}
 
 {% endblock %}
