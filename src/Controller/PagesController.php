@@ -16,15 +16,12 @@ final class PagesController extends AbstractController
     #[Route('/', name: 'app_homepage')]
     public function home(): Response
     {
-        
         return $this->render('pages/home.html.twig');
     }
 
     #[Route('/simulateur', name: 'app_simulator')]
     public function simulator(): Response
     {
-
-        
         return $this->render('pages/simulator.html.twig');
     }
 

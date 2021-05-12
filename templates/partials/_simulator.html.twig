@@ -23,7 +23,7 @@
                     <p>Montant: <span id="info-slider"></span> €</p>
                </div>
                <div>
-                    <input type="range" min="5000" max="100000" class="slider" id="range">
+                    <input type="range" min="5000" max="100000" class="slider" id="range" step="1000">
                </div>
                <div>
                     <div>
@@ -58,7 +58,6 @@
      </div>
 
 <script data-turbo-eval = "true" type="module">
-
 
 $( document ).ready(function($) {
 
@@ -164,6 +163,9 @@ $( document ).ready(function($) {
           var id = $("#credit-select").val(),
           typeCredit = $('#credit-select').find(':selected').attr('value');
           principal =  $(this).val();
+
+          console.log(principal);
+
           $('#amount_resum').text(principal);
           
           $("div.card").remove();

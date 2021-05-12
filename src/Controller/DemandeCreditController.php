@@ -34,24 +34,26 @@ class DemandeCreditController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-           
+            
             $contactName = $form->get('firstname')->getData();
 
             if (TurboStreamResponse::STREAM_FORMAT === $request->getPreferredFormat()) {
-                
+               
                 $formSend = $form->getData();
 
                 $credit = $creditRepository->find($demandeCredit->getTypeDeCredit());
                 $demandeCredit->setTypeDeCredit($credit->getDesignation());
                 $mailService->sendMailRequest($demandeCredit);
                 
-                return $this->render('contact/_success_request_form.stream.html.twig', [
+                $content =  $this->renderView('contact/_success_request_form.stream.html.twig', [
                     'contactName' => $contactName,
                     'form' => $blankForm->createView(),
                     'page' => $this->page,
                     'credits' => $this->credits, 
                     'mensualites' => $mensualites
-                ], new TurboStreamResponse());
+                ]);
+
+                return new Response($content, 200);
             }
 
             $formSend = $form->getData();
@@ -66,7 +68,7 @@ class DemandeCreditController extends AbstractController
         }
 
         if ($form->isSubmitted() && !$form->isValid()) {
-
+         
             $content = $this->renderView('pages/request.html.twig',[
                 'page' => $this->page ,
                 'form' => $form->createView(), 
