@@ -45,15 +45,13 @@ class DemandeCreditController extends AbstractController
                 $demandeCredit->setTypeDeCredit($credit->getDesignation());
                 $mailService->sendMailRequest($demandeCredit);
                 
-                $content =  $this->renderView('contact/_success_request_form.stream.html.twig', [
+                return $this->render('contact/_success_request_form.stream.html.twig', [
                     'contactName' => $contactName,
                     'form' => $blankForm->createView(),
                     'page' => $this->page,
                     'credits' => $this->credits, 
                     'mensualites' => $mensualites
-                ]);
-
-                return new Response($content, 200);
+                ], new TurboStreamResponse());
             }
 
             $formSend = $form->getData();

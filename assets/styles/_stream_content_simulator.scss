@@ -1,0 +1,62 @@
+.content-simulator > div {
+    margin: 0;
+    padding: 0;
+}
+
+.content-simulator > div > form {
+  display: flex;
+  flex-direction: row;
+  margin:0;
+  padding:0;
+}
+
+.content-simulator  > div > form > div {
+    padding:10px;
+  }
+
+.content-simulator  > div > form > .content-form {
+    height: auto;
+}
+
+.content-simulator  > div > form > .content-form > div {
+    height: 75px;
+}
+
+.content-simulator  > div > form > .content-form > div:last-of-type {
+    height: 290px;
+}
+
+.content-simulator  > div > form > .content-form > div > textarea {
+    height: 100%;
+}
+
+.content-simulator  > div > form > div > div > #demande_credit_dureeDuPret {
+   display: none;
+}
+
+.content-simulator  > div > form > div > div > #demande_credit_typeDeCredit {
+    display: none;
+ }
+
+ .content-simulator  > div > form > div > div > #demande_credit_montantAEmprunter {
+    display: none;
+ }
+
+ .content-simulator  > div > form > div > .button {
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+ }
+
+ .content-simulator  > p {
+     text-align: end;
+ }
+
+
+
+@media (min-width: 1400px) {
+    .content-simulator > div > h2 {
+        padding-left: 5vw!important;
+    }
+}

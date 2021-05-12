@@ -7,47 +7,49 @@
 {# Mise à jour du formulaire pour vider les champs #}
 
 <turbo-stream action="update" target="form_request">
-  <div class="row mt-4 mb-2">
+  <template>
+    <div class="row mt-4 mb-2">
 
-      <h2>Faites votre demande de prêt : </h2>
+        <h2>Faites votre demande de prêt : </h2>
 
-      {{ form_start(form, {'attr' : { 'class' : 'row justify-content-around'}} ) }}
-      <div class="col-md-12 col-lg-6 col-xxl-5 content-form">
+        {{ form_start(form, {'attr' : { 'class' : 'row justify-content-around'}} ) }}
+        <div class="col-md-12 col-lg-6 col-xxl-5 content-form">
 
-        {{ form_row(form.lastname) }}
-        {{ form_row(form.firstname) }}
-        {{ form_row(form.dateDeNaissance) }}
-        {{ form_row(form.codepostal) }}
-        {{ form_row(form.pays) }}
-        {{ form_row(form.phonenumber) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.message) }}
+          {{ form_row(form.lastname) }}
+          {{ form_row(form.firstname) }}
+          {{ form_row(form.dateDeNaissance) }}
+          {{ form_row(form.codepostal) }}
+          {{ form_row(form.pays) }}
+          {{ form_row(form.phonenumber) }}
+          {{ form_row(form.email) }}
+          {{ form_row(form.message) }}
 
-      </div>
+        </div>
+          
+        <div class="col-md-12 col-lg-6 col-xxl-5">
+
+          {{ form_rest(form) }}
+
+          {%  include 'blocks/_block.html.twig' with {'component' : 'partials/_simulator' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
+          {%  include 'blocks/_sub/_button_form.html.twig' with {'bg': 'bg-white', 'color': 'white' , 'classe' : 'button-form'} %}
         
-      <div class="col-md-12 col-lg-6 col-xxl-5">
+        </div>
+        
+        {{ form_end(form) }}
+    </div>
 
-        {{ form_rest(form) }}
-
-        {%  include 'blocks/_block.html.twig' with {'component' : 'partials/_simulator' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
-        {%  include 'blocks/_sub/_button_form.html.twig' with {'bg': 'bg-white', 'color': 'white' , 'classe' : 'button-form'} %}
-      
-      </div>
-      
-      {{ form_end(form) }}
-  </div>
-
-  <script data-turbo-eval = "true" type="module">
-    jQuery(document).ready(function() {
-        $('.js-datepicker').datepicker({ 
-            dateFormat: 'dd-mm-yy',
-            yearRange: "-100:+0",
-            monthNamesShort: [ "Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Juil", "Août", "Sep", "Oct", "Nov", "Déc" ],
-            changeYear: true,
-            changeMonth: true
-        });
-    });
-  </script>
+    <script data-turbo-eval = "true" type="module">
+      jQuery(document).ready(function() {
+          $('.js-datepicker').datepicker({ 
+              dateFormat: 'dd-mm-yy',
+              yearRange: "-100:+0",
+              monthNamesShort: [ "Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Juil", "Août", "Sep", "Oct", "Nov", "Déc" ],
+              changeYear: true,
+              changeMonth: true
+          });
+      });
+    </script>
+  </template>
 </turbo-stream>
 
 {# Ajout d'un "flash message" au dessus du formulaire, dans la frame "contact_form" #}
