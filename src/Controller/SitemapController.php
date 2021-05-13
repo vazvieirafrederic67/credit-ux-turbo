@@ -13,8 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SitemapController extends AbstractController
 {
     /**
-     * @Route("/sitemap.xml", name="app_sitemap")
-
+     * @Route("/sitemap.xml", name="app_sitemap", defaults={"_format":"xml"})
      */
     public function index(Request $request): Response
     {
