@@ -1,7 +1,3 @@
-app_sitemap:
-    path: /sitemap.xml
-    controller: App\Controller\SitemapController::index
-
 app_homepage:
     path: /
     controller: App\Controller\PagesController::home

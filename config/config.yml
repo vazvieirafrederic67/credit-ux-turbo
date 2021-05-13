@@ -1,6 +1,0 @@
-# app/config/config.yml
-cmf_seo:
-    sitemap:
-        defaults:
-            templates:
-                html: sitemap/index.html.twig
