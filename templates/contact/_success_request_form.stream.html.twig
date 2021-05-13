@@ -30,7 +30,7 @@
 
           {{ form_rest(form) }}
 
-          {%  include 'blocks/_block.html.twig' with {'component' : 'partials/_simulator' , 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
+          {%  include 'partials/_simulator.html.twig' with { 'bg': 'bg-lightgrey', 'color': 'white' , 'classe' : 'simulator'} %}
           {%  include 'blocks/_sub/_button_form.html.twig' with {'bg': 'bg-white', 'color': 'white' , 'classe' : 'button-form'} %}
         
         </div>
