@@ -1,23 +1,25 @@
 <nav class="navbar fixed navbar-expand-lg navbar-light bg-primary">
   <div class="container-fluid">
-    <a data-turbo="false" class="navbar-brand" href="{{ path('app_homepage') }}">Page d'accueil</a>
+    <a data-turbo="false" class="navbar-brand" href="{{ path('app_homepage') }}">
+      <div class="logo_img" style="background-image: url('img/MonCreditEuropeen_LOGO.svg')"></div>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="{{ path('app_simulator') }}">Simulateur</a>
-        <a class="nav-link" href="{{ path('app_request') }}">Demande de prêt</a>
-        <a class="nav-link" href="{{ path('app_about') }}">A propos</a>
-        <a class="nav-link" href="{{ path('app_contact') }}" tabindex="-1">Contact</a>
+      <div class="ms-4 navbar-nav">
+        <a class="nav-link head active" aria-current="page" href="{{ path('app_simulator') }}">Simulateur</a>
+        <a class="nav-link head" href="{{ path('app_request') }}">Demande de prêt</a>
+        <a class="nav-link head" href="{{ path('app_about') }}">A propos</a>
+        <a class="nav-link head" href="{{ path('app_contact') }}" tabindex="-1">Contact</a>
       </div>
     </div>
 
     {% if is_granted('ROLE_ADMIN') == true %}
     <div class="navbar-nav">
-      <a class="nav-link" href="{{ path('credit_index') }}">Crédits</a>
-      <a class="nav-link" href="{{ path('duree_index') }}">Durées</a>
-      <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+      <a class="nav-link head" href="{{ path('credit_index') }}">Crédits</a>
+      <a class="nav-link head" href="{{ path('duree_index') }}">Durées</a>
+      <a class="nav-link head" href="{{ path('app_logout') }}">Déconnexion</a>
     </div>   
     {% endif %}
   </div>
